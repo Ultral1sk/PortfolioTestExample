@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import TeamMembers from './TeamMembers';
+import SingleTeamMembers from './SingleTeamMember';
 import { Link } from 'react-router-dom';
 
 import img1 from '../assets/team/1.jpg'
@@ -31,7 +31,7 @@ class Team extends Component {
              
                
                     {teamMembersInformation.map((info, index) => {
-                      return  <TeamMembers {...info} key={index} />
+                      return  <SingleTeamMembers {...info} key={index} />
                     })}
                   
               </div>

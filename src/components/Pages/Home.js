@@ -5,6 +5,7 @@ import image from '../assets/img/header-bg.jpg';
 import Services from '../Common/Services';
 import Portfolio from '../Common/Portfolio'
 import Team from '../Common/Team';
+import ClientLogo from '../Common/ClientLogo'
 
 
 class Home extends Component {
@@ -21,6 +22,7 @@ class Home extends Component {
                 <Services />
                 <Portfolio />
                 <Team />
+                <ClientLogo />
             </div>
         )
     }

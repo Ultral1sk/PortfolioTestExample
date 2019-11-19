@@ -5,7 +5,7 @@ const teamMembersInformation = [
     {name: '',  avatars : '', profession : '',   iconOne : 'fa-twitter', iconTwo : 'fa-facebook-f', iconThree : 'fa-linkedin-in'},
 ]
 
-class TeamMembers extends Component {
+class SingleTeamMembers extends Component {
     render() {
         return (
           
@@ -41,4 +41,4 @@ class TeamMembers extends Component {
     }
 }
 
-export default TeamMembers
+export default SingleTeamMembers
