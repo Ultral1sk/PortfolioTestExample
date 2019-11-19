@@ -7,9 +7,6 @@ import img4 from '../assets/img/portfolio/04-thumbnail.jpg'
 import img5 from '../assets/img/portfolio/05-thumbnail.jpg'
 import img6 from '../assets/img/portfolio/06-thumbnail.jpg'
 
-
-
-
 const portfolio = [
     {title: 'Threads',   subtitle: 'Illustration',      image: img1},
     {title: 'Explore',   subtitle: 'Graphic Design',    image: img2},
@@ -24,15 +21,15 @@ class Portfolio extends Component {
     render() {
         return (
         
-    <section class="bg-light page-section" id="portfolio">
-        <div class="container">
-            <div class="row">
-            <div class="col-lg-12 text-center">
-                <h2 class="section-heading text-uppercase">Portfolio</h2>
-                <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+    <section className="bg-light page-section" id="portfolio">
+        <div className="container">
+            <div className="row">
+            <div className="col-lg-12 text-center">
+                <h2 className="section-heading text-uppercase">Portfolio</h2>
+                <h3 className="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
             </div>
             </div>
-            <div class="row">
+            <div className="row">
                 {portfolio.map((item, index) => {
                     return <PortfolioItem {...item} key={index} />
                 })}
