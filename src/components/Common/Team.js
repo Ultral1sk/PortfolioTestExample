@@ -30,8 +30,8 @@ class Team extends Component {
                 <div className="row">
              
                
-                    {teamMembersInformation.map((info, index) => {
-                      return  <SingleTeamMembers {...info} key={index} />
+                    {teamMembersInformation.map((member, index) => {
+                      return  <SingleTeamMembers {...member} key={index} />
                     })}
                   
               </div>
