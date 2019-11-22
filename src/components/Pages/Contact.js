@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Field from '../Common/Field';
+import { withFormik } from 'formik'
+import  * as Yup from 'yup'
 
 const fields = {
   sections : [
@@ -14,28 +16,11 @@ const fields = {
       {name: 'message', elementName: 'textarea', type: 'text', placeholder: ''}
 
     ]
-]
+  ]
 }
 
 class Contact extends Component {
-  constructor(props) {
-    super(props)
-  
-    this.state = {
-       name   :   '',
-       email  :   '',
-       phone  :   '',
-       message:   ''
-    }
-  }
 
-
-
-  submitForm = (e) => {
-    e.preventDefault()
-      alert('Form Submitted. Thank you!')
-  }
-  
   render() {
     return (
       <section className="page-section" id="contact">
@@ -48,7 +33,7 @@ class Contact extends Component {
         </div>
         <div className="row">
           <div className="col-lg-12">
-            <form onSubmit={e => this.submitForm(e)} name="sentMessage" novalidate="novalidate" >
+            <form onSubmit={this.props.handleSubmit} name="sentMessage" novalidate="novalidate" >
               <div className="row">
               {fields.sections.map((section, sectionIndex) => {
                 console.log(section)
@@ -59,10 +44,12 @@ class Contact extends Component {
                       return <Field 
                                     {...field} 
                             key     ={sectionIndex} 
-                            value   ={this.state[field.name]}
-                            onChange={e => this.setState({
-                                  [field.name] : e.target.value}
-                              )}
+                            value   ={this.props.values[field.name]}
+                            name    ={field.name}
+                            onChange={this.props.handleChange}
+                            onBlur  ={this.props.handleBlur}
+                            touched ={(this.props.touched[field.name])}
+                            errors  ={this.props.errors[field.name]}
                             />
 
                           })}
@@ -94,4 +81,27 @@ class Contact extends Component {
   }
 }
 
-export default Contact
+export default withFormik({
+  mapPropsToValues: () => ({
+    name    : '',
+    email   : '',
+    phone   : '',
+    message : ''
+
+  }),
+  validationSchema: Yup.object().shape({
+    name: Yup.string().min(3,'The length of the name is not long enough').required('The length of the name is not long enough'),
+    email: Yup.string().email('The field requries valid email').required('The field requries valid email'),
+    phone: Yup.string()
+              .min(10, 'Pease provide your 10 digit phone number')
+              .max(15, 'Number is not long enough')
+              .required('This filed requires a valid phone number'),
+
+    message: Yup.string().min(500, 'You need to provide us more detailed information')
+  }),
+
+  handleSubmit: ((values, {setSubmitting}) => {
+    alert("You've submitted the form", JSON.stringify(values));
+  })
+
+})(Contact);

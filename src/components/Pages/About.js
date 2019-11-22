@@ -3,6 +3,7 @@ import Header from '../Common/Header';
 import Team from '../Common/Team';
 import ClientLogo from '../Common/ClientLogo';
 import image from '../assets/img/Aboutus.jpg';
+import Contact from './Contact'
 
 class About extends Component {
     render() {
@@ -16,6 +17,7 @@ class About extends Component {
                 />
                     <Team />
                     <ClientLogo />
+                    <Contact />
               </>
         );
     }

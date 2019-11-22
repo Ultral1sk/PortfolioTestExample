@@ -8,14 +8,14 @@ class Field extends Component {
                 
                 <input 
                         className="form-control" 
-                        name="name"
                         id={this.props.name}
                         type={this.props.type}
                         placeholder={this.props.placeholder}
                         required="required" 
                         data-validation-required-message="Please enter your name." 
-                        value={this.props.value}
-                        onChange={e => this.props.onChange(e)}
+                        name={this.props.name}
+                        onChange={this.props.onChange}
+                        onBlur  ={this.props.onBlur}
                     />
                     
                 :
@@ -26,14 +26,18 @@ class Field extends Component {
                       placeholder={this.props.placeholder}
                       required="required" 
                       data-validation-required-message="Please enter a message."
-                      value={this.props.value}
-                      onChange={e => this.props.onChange(e)}
+                      name={this.props.name}
+                      onChange={this.props.onChange}
+                      onBlur  ={this.props.onBlur}
+                      
                       >
 
                     </textarea>
 
                 }
                 <p className="help-block text-danger"></p>
+                    {(this.props.touched && this.props.errors) && 
+                         <span className="text-danger">{this.props.errors}</span>}
                 </div>
                 
           )

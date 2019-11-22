@@ -6,6 +6,8 @@ import Services from '../Common/Services';
 import Portfolio from '../Common/Portfolio'
 import Team from '../Common/Team';
 import ClientLogo from '../Common/ClientLogo'
+import Contact from './Contact'
+
 
 
 class Home extends Component {
@@ -23,6 +25,7 @@ class Home extends Component {
                 <Portfolio />
                 <Team />
                 <ClientLogo />
+                <Contact />
             </div>
         )
     }
