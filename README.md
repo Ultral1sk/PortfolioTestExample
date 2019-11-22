@@ -1,4 +1,4 @@
-This is just a Portfoilo Project Test
+This is just a Portfoilo Project Test from a Udemy Course
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
