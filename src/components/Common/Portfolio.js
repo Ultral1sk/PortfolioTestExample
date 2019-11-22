@@ -14,6 +14,7 @@ const portfolio = [
     {title: 'Lines',     subtitle: 'Branding',          image: img4},
     {title: 'SouthWest', subtitle: 'Website Design',    image: img5},
     {title: 'Window',    subtitle: 'Photography',       image: img6},
+    
    
 ]
 
